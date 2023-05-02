@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+<div th:each="testorder: ${orders}">
+    <hr>
+    <a th:href="@{/test/{id}(id=${testorder.getId()})}" th:text="${testorder.getName()}">Order</a>
+</div>
+<hr>
+<a th:href="@{/test/new}">New order!</a>
+</body>
+</html>
