@@ -1,15 +1,45 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <style>
+        body{
+            margin: 0;
+        }
+        .btn{
+            width: 40px;
+            height: 20px;
+            border-radius: 10px;
+
+            padding: 5px;
+
+            background-color: antiquewhite;
+        }
+
+        .mainList{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .mainList__a{
+            text-align: center;
+            display: table;
+
+            width: 500px;
+
+            margin: 10px auto ;
+            background-color: white;
+        }
+        
+    </style>
     <meta charset="UTF-8">
     <title>Index</title>
 </head>
 <body>
-<div th:each="testorder: ${orders}">
-    <hr>
-    <a th:href="@{/test/{id}(id=${testorder.getId()})}" th:text="${testorder.getName()}">Order</a>
+<div th:each="testorder: ${orders}" class="mainList">
+    <a class="mainList__a" th:href="@{/test/{id}(id=${testorder.getId()})}" th:text="${testorder.getName()}">Order</a>
 </div>
 <hr>
-<a th:href="@{/test/new}">New order!</a>
+<a th:href="@{/test/new}" class="btn">New order!</a>
 </body>
 </html>

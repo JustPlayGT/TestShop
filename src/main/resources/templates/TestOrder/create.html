@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <style>
+        form { 
+            background-color: rgb(255, 255, 255); 
+            padding: 20px ;
+            border-radius: 30px;
+            
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+        }
+        body {background-color: powderblue;}
+    </style>
+
     <meta charset="UTF-8">
     <title>Create?</title>
 </head>
@@ -9,16 +22,16 @@
 
     <label for="name">Enter Name:</label>
     <input name="name" type="text" th:field="*{name}" id="name"/>
-    <br/>
+    
     <label for="customerName">Enter CustomerName:</label>
     <input name="customerName" type="text" th:field="*{customerName}"  id="customerName"/>
-    <br/>
+    
     <label for="comment">Enter Comment:</label>
     <input name="comment" type="text" th:field="*{comment}" id="comment">
-    <br/>
+    
     <label for="cost">Enter Cost:</label>
     <input name="cost" type="number" th:field="*{cost}" id="cost">
-    <br/>
+    
     <input type="submit" value="Create!">
 
 </form>

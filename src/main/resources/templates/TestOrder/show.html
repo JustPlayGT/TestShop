@@ -1,19 +1,55 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <style>
+        .customForm { 
+            background-color: rgb(255, 255, 255); 
+            padding: 20px ;
+            border-radius: 30px;
+            
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+        }
+        .customForm__text{
+            padding: 5px;
+            border: 1px solid black;
+        }
+
+        body {background-color: powderblue;}
+    </style>
     <meta charset="UTF-8">
     <title>Show</title>
 </head>
 <body>
-Result:
-<p th:text="${testorder.getId()}"> </p>
-<p th:text="${testorder.getName()}"> </p>
-<p th:text="${testorder.getCustomerName()}"> </p>
-<p th:text="${testorder.getComment()}"> </p>
-<p th:text="${testorder.getCost()}"> </p>
-<a th:href="@{/test/{id}/edit(id=${testorder.getId()})}">Edit!</a>
-<form  th:method="delete" th:action="@{/test/{id}/delete(id=${testorder.getId()})}">
-    <button  type="submit" > Delete! </button>
-</form>
+<div class="customForm">
+    
+    <p>ID: </p>
+    <p th:text="${testorder.getId()}" class="customForm__text">  </p>
+
+    <p>Name: </p>
+    <p th:text="${testorder.getName()}" class="customForm__text">  </p>
+    
+    <p>Customer: </p>
+    <p th:text="${testorder.getCustomerName()}" class="customForm__text">  </p>
+
+    <p>Comment: </p>
+    <p th:text="${testorder.getComment()}" class="customForm__text">  </p>
+    
+    <p>Cost: </p>
+    <p th:text="${testorder.getCost()}" class="customForm__text">  </p>
+    
+    <button>
+        <a th:href="@{/test/{id}/edit(id=${testorder.getId()})}">Edit!</a>
+    </button>
+    
+
+
+
+    <form  th:method="delete" th:action="@{/test/{id}/delete(id=${testorder.getId()})}">
+        <button  type="submit" > Delete! </button>
+    </form>
+
+</div>
+
 </body>
 </html>
